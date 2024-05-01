@@ -94,6 +94,8 @@ body {
     border-color: #C66A6A;
     border-radius: 10%;
     border: none;
+    z-index: 1;
+
 }
 
 .navbar-about-button {
@@ -107,6 +109,7 @@ body {
     border-color: #C66A6A;
     border-radius: 10%;
     border: none;
+    z-index: 1;
 }
 
 .bi-question-circle {
@@ -134,7 +137,7 @@ body {
 
 /* Timer Section */
 .timer-outer-container {
-    background-color: #C15C5C;
+    background-color: #C66A6A;
     width: 90%;
     margin-left: 5%;
     margin-top: 10%;
@@ -161,7 +164,7 @@ body {
 .pomodoro-button,
 .short-break-button,
 .long-break-button {
-    background-color: #C15C5C;
+    background-color: #C66A6A;
     border: none;
     border-radius: 10%;
     color: white;
@@ -231,4 +234,22 @@ body {
     text-align: center;
     color: #BC5B68;
     font-weight: bolder;
+}
+
+
+
+/* Changing the mouse icon when hovering over buttons */
+.start-button, .pomodoro-button, .short-break-button, .long-break-button, .navbar-help-button, .navbar-about-button {
+    cursor: pointer;
+}
+
+/* Changing the website background color depending on the timer option clicked */
+.pomodoro-button:hover body{
+    background-color: #C15C5C;
+}
+.short-break-button:hover body {
+    background-color: #A44E4E;
+}
+.long-break-button:hover body {
+    background-color: #A44E4E;
 }

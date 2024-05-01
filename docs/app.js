@@ -1,11 +1,41 @@
-// Creating a feature where the countdown timer text will begin to countdown when the start-button is clicked
-
 // Creating variables for the start-button and the countdown-text elements by selecting their classes
 const startButton = document.querySelector(".start-button");
 const countdownText = document.querySelector(".countdown-text");
 
+// Creating the variables for all 3 timer options buttons
+const pomodoroButton = document.querySelector(".pomodoro-button");
+const shortBreakButton = document.querySelector(".short-break-button");
+const longBreakButton = document.querySelector(".long-break-button");
+
+// Creating 3 timer variables that hold the start time, short break time, and long break time in minutes.
+var defaultTime = 25;
+var shortBreakTime = 5;
+var longBreakTime = 15;
+
 // Setting the countdown time by multiplying 60 seconds by x minutes (default 25 minutes)
 var countdownTime = 60 * 25;
+
+// Changing the value of the countdownTime by clicking on the 3 options buttons
+pomodoroButton.addEventListener("click", function () {
+  countdownTime = 60 * 25; // 25 minutes for Pomodoro
+  //   Also changing the html text to show the new time
+  countdownText.textContent = "25:00";
+  console.log("CountdownTime set to " + countdownTime);
+});
+
+shortBreakButton.addEventListener("click", function () {
+  countdownTime = 60 * 5; // 5 minutes for short break
+  //   Also changing the html text to show the new time
+  countdownText.textContent = "05:00";
+  console.log("countdownTime set to " + countdownTime);
+});
+
+longBreakButton.addEventListener("click", function () {
+  countdownTime = 60 * 15; // 15 minutes for long break
+  //   Also changing the html text to show the new time
+  countdownText.textContent = "15:00";
+  console.log("countdownTime set to " + countdownTime);
+});
 
 // Adding a click event listener to the .start-button button
 startButton.addEventListener("click", function () {
@@ -47,7 +77,70 @@ startButton.addEventListener("click", function () {
       startButton.disabled = false;
 
       // Resetting the countdown time to the vaule that it started at
-      countdownText.textContent = "25:00";
+      countdownText.textContent = countdownTime;
     }
   }, 1000);
+});
+
+// Adding JS to change the background color of the website and the background color of elements depedning on the timer option picked
+var websiteBody = document.querySelector("body");
+var navbarBackground = document.querySelector(".navbar-container");
+var helpButton = document.querySelector(".navbar-help-button");
+var aboutButton = document.querySelector(".navbar-about-button");
+var navbarHR = document.querySelector(".navbar-hr");
+var timerContainer = document.querySelector(".timer-outer-container");
+var startButtonText = document.querySelector(".start-button-text");
+
+pomodoroButton.addEventListener("click", function () {
+  // Changing the elements background color to the base red color: #BA4949
+  websiteBody.style.backgroundColor = "#BA4949";
+  navbarBackground.style.backgroundColor = "#BA4949";
+  startButtonText.style.color = "#BA4949";
+
+  // Changing the elements text color to the lighter red color: #C66A6A
+  helpButton.style.backgroundColor = "#C66A6A";
+  aboutButton.style.backgroundColor = "#C66A6A";
+  timerContainer.style.backgroundColor = "#C66A6A";
+  pomodoroButton.style.backgroundColor = "#C66A6A";
+  shortBreakButton.style.backgroundColor = "#C66A6A";
+  longBreakButton.style.backgroundColor = "#C66A6A";
+
+  // Changing the hr color to the darker red color: #A74242
+  navbarHR.style.borderTop = "2px solid #A74242";
+});
+
+shortBreakButton.addEventListener("click", function () {
+  // Changing the elements background color to the base green color: #38868a
+  websiteBody.style.backgroundColor = "#38868a";
+  navbarBackground.style.backgroundColor = "#38868a";
+  startButtonText.style.color = "#38868a";
+
+  // Changing the elements text color to the lighter green color: #4c9196
+  helpButton.style.backgroundColor = "#4c9196";
+  aboutButton.style.backgroundColor = "#4c9196";
+  timerContainer.style.backgroundColor = "#4c9196";
+  pomodoroButton.style.backgroundColor = "#4c9196";
+  shortBreakButton.style.backgroundColor = "#4c9196";
+  longBreakButton.style.backgroundColor = "#4c9196";
+
+  // Changing the hr color to the darker green color: #32777c
+  navbarHR.style.borderTop = "2px solid #32777c";
+});
+
+longBreakButton.addEventListener("click", function () {
+  // Changing the elements background color to the base blue color: #397097
+  websiteBody.style.backgroundColor = "#397097";
+  navbarBackground.style.backgroundColor = "#397097";
+  startButtonText.style.color = "#397097";
+
+  // Changing the elements text color to the lighter red color: #4d7fa2
+  helpButton.style.backgroundColor = "#4d7fa2";
+  aboutButton.style.backgroundColor = "#4d7fa2";
+  timerContainer.style.backgroundColor = "#4d7fa2";
+  pomodoroButton.style.backgroundColor = "#4d7fa2";
+  shortBreakButton.style.backgroundColor = "#4d7fa2";
+  longBreakButton.style.backgroundColor = "#4d7fa2";
+
+  // Changing the hr color to the darker blue color: #336588
+  navbarHR.style.borderTop = "2px solid #336588";
 });
