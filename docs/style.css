@@ -243,13 +243,23 @@ body {
     cursor: pointer;
 }
 
-/* Changing the website background color depending on the timer option clicked */
-.pomodoro-button:hover body{
-    background-color: #C15C5C;
+
+
+
+/* 
+The following color animations are disabled due to unpleasant user experience.
+*/
+
+/* Adding a transition effect for all the elements that change colors when a button is clicked */
+body, .navbar-background, .start-button-text, .navbar-hr {
+    /* transition: all 0.1s ease; Add this line */
+    /* Other styles... */
 }
-.short-break-button:hover body {
-    background-color: #A44E4E;
+
+
+/* Elements with different shades of colors are set to change with different speeds */
+.help-button, .about-button, .timer-container, .pomodoro-button, .short-break-button, .long-break-button {
+    /* transition: all 0.1s ease; Add this line */
+    /* Other styles... */
 }
-.long-break-button:hover body {
-    background-color: #A44E4E;
-}
+

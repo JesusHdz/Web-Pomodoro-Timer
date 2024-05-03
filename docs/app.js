@@ -107,6 +107,9 @@ pomodoroButton.addEventListener("click", function () {
 
   // Changing the hr color to the darker red color: #A74242
   navbarHR.style.borderTop = "2px solid #A74242";
+  
+  // Adding .active class when button is clicked. Used for styling purposes. Resource: https://www.w3schools.com/howto/howto_js_active_element.asp
+  pomodoroButton.classList.add("active"); // Adding the active class to the short break button. Resource: https://stackoverflow.com/questions/507138/how-to-add-a-class-to-a-given-element
 });
 
 shortBreakButton.addEventListener("click", function () {
@@ -125,6 +128,10 @@ shortBreakButton.addEventListener("click", function () {
 
   // Changing the hr color to the darker green color: #32777c
   navbarHR.style.borderTop = "2px solid #32777c";
+
+
+  // Adding .active class when button is clicked. Used for styling purposes. Resource: https://www.w3schools.com/howto/howto_js_active_element.asp
+  shortBreakButton.classList.add("active"); // Adding the active class to the short break button. Resource: https://stackoverflow.com/questions/507138/how-to-add-a-class-to-a-given-element
 });
 
 longBreakButton.addEventListener("click", function () {
@@ -143,4 +150,19 @@ longBreakButton.addEventListener("click", function () {
 
   // Changing the hr color to the darker blue color: #336588
   navbarHR.style.borderTop = "2px solid #336588";
+
+  // Adding .active class when button is clicked. Used for styling purposes. Resource: https://www.w3schools.com/howto/howto_js_active_element.asp
+  longBreakButton.classList.add("active"); // Adding the active class to the short break button. Resource: https://stackoverflow.com/questions/507138/how-to-add-a-class-to-a-given-element
 });
+
+
+
+
+// Clicking the pomodoro button when the page loads. Resource: https://stackoverflow.com/questions/21418915/click-a-button-element-on-page-load
+document.addEventListener("DOMContentLoaded", function() {
+  pomodoroButton.click();
+  console.log("Pomodoro button clicked");
+});
+
+
+
